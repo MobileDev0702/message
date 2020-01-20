@@ -1,0 +1,23 @@
+{
+  "homepage": "http://mobiledev0702.github.io/message",
+  "name": "draft-js-tutorial",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "draft-js": "^0.10.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+	"deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
