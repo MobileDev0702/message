@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onUnderlineClick}>Send</button>
-        <button onClick={this.onToggleCode}>Code Block</button>
+        {/* <button onClick={this.onToggleCode}>Code Block</button> */}
         <Editor
           editorState={this.state.editorState}
           handleKeyCommand={this.handleKeyCommand}
