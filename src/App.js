@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import io from 'socket.io-client'
-import FontAwesome from 'react-fontawesome'
 import './App.css'
 import Home from './Home'
 // import Home from './Home'
@@ -65,7 +64,7 @@ export default class App extends Component {
   render() {
     const { name } = this.state.user
     // const { name, photo } = this.state.user
-    const { disabled } = this.state
+    // const { disabled } = this.state
     
     
     name?localStorage.setItem("isSigned", true):localStorage.setItem('isSigned', false);
@@ -94,7 +93,7 @@ export default class App extends Component {
                 onClick={this.startAuth.bind(this)} 
                 style={{borderRadius: '50%'}}
 
-              ><img src={'./twitter.png'} style={{width:'200px'}} />
+              ><img src={'./twitter.png'} style={{width:'200px'}} alt={name}/>
               </button>
               
             </div>
