@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 2em;
   background: #333;
@@ -40,4 +40,32 @@ pre > pre{
   border: none;
   padding: 0;
 }
+ */
 
+ .directory {
+   background-color: white;
+   margin: 1px;
+   padding: 5px;
+   height: 200px;
+   border-radius: 12px;
+ }
+  
+ .mPanel{
+  background-color: white;
+  /* margin: 4px; */
+  /* height: 600px; */
+  border-radius: 12px;
+  padding: 20px;
+ }
+
+ .bSend{
+   margin-bottom: 0px;
+   float: left;
+ }
+
+ @media screen and (max-width:620px) {
+  /* For mobile phones: */
+  .left, .right {
+    width:100%;
+  }
+}
