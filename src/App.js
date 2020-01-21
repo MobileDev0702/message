@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import io from 'socket.io-client'
 import './App.css'
 import Home from './Home'
-const API_URL = 'http://mobiledev0702.github.io/message'//'http://127.0.0.1:8080'
+const API_URL = 'http://127.0.0.1:8080' //'http://mobiledev0702.github.io/message'
 const socket = io(API_URL)
 
 export default class App extends Component {
