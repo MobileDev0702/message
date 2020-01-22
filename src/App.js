@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import io from 'socket.io-client'
 import './App.css'
 import Home from './Home'
-const API_URL = 'http://mobiledev0702.github.io/message' //'http://127.0.0.1:8080'
+const API_URL = 'http://127.0.0.1:8080' //'http://mobiledev0702.github.io/message'
 const socket = io(API_URL)
 
 export default class App extends Component {
@@ -85,16 +85,21 @@ export default class App extends Component {
           //     <h4>{`@${name}`}</h4>
           //   </div> 
           ? <Home user= {this.state.user}/>
-          : <div className={'button'}>
-              <button 
-                type='button'
-                className='btn btn-lg'
-                onClick={this.startAuth.bind(this)} 
-                style={{borderRadius: '50%'}}
-
-              ><img src={'./twitter.png'} style={{width:'200px'}} alt={name}/>
-              </button>
-              
+          : <div className='container' style={{paddingTop:'100px'}}>
+              <div className='row'>
+                <div className='col-6' align='center'>
+                <i className="fa fa-twitter"
+                  onClick={this.startAuth.bind(this)} 
+                  style={{borderRadius: '50%', fontSize:'100px',padding:'10%', backgroundColor:'#1da1f2', color:'white'}}>
+                </i>
+                </div>
+                <div className='col-6' align='center'>
+                  <i className="fa fa-twitter"
+                    onClick={this.startAuth.bind(this)} 
+                    style={{borderRadius: '50%', fontSize:'100px',padding:'10%', backgroundColor:'#1da1f2', color:'white'}}>
+                  </i>
+                </div>
+              </div>
             </div>
         }
       </div>

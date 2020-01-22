@@ -24,12 +24,32 @@ class Home extends Component {
     return 'not-handled';
   }
 
-  onUnderlineClick = () => {
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'));
-  }
+  onToggleCode = async() => {
 
-  onToggleCode = () => {
-    this.onChange(RichUtils.toggleCode(this.state.editorState));
+    const data = {"event": {
+        "type": "message_create",
+        "message_create": {
+            "target": {
+                "recipient_id": "1209904263301750784"
+            },
+            "message_data": {
+                "text": "Hello World!"
+            }
+        }
+    }};
+
+    fetch('https://api.twitter.com/1.1/direct_messages/events/new.json', {
+      method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'OAuth oauth_consumer_key="UlUfi99Q4zsSZiRq0RvMSSiCG",oauth_token="1203726704755109895-RG5ycQJxdkDKJkn00fMnZb0ze01JNJ",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1579588272",oauth_nonce="VgK7ZZpHI7K",oauth_version="1.0",oauth_signature="FzNJOLoSCcR6FUoute6u%2Bb3HDho%3D"'
+			}
+		}).then(response => {
+				return response.json();
+			}).then(json => {
+        console.log(json);
+			});
   }
 
   render() {
@@ -37,7 +57,7 @@ class Home extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container">
-            <a className="navbar-brand">
+            <a className="navbar-brand" href="#/">
               <h1><i className="material-icons">home	</i> OutReach Assistant</h1>
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,14 +66,13 @@ class Home extends Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link"><h4>John Smith</h4></a>
+                  <a className="nav-link" href="#/"><h4>John Smith</h4></a>
                 </li>
               </ul>
             </div>
           </div>
       
         </nav>
-        <div className="container">
           <div className="card card-primary">
             <div className="card-header">
             
@@ -119,15 +138,13 @@ class Home extends Component {
             </div>
             <div className="card-body">
               <Editor
+                placeholder="Write your message to send..."
                 editorState={this.state.editorState}
                 handleKeyCommand={this.handleKeyCommand}
                 onChange={this.onChange}
               />
             </div>
           </div>
-          
-          
-        </div>
       </div>
       
       
