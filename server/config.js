@@ -1,3 +1,4 @@
+// Config
 const providers = ['twitter', 'facebook']
 
 const callbacks = providers.map(provider => {
