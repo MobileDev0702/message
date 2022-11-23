@@ -18,7 +18,7 @@
     "passport-facebook": "^2.1.1",
     "request": "^2.86.0",
     "request-promise": "^4.2.2",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.5.0"
   },
   "author": "funador",
   "license": "MIT",
